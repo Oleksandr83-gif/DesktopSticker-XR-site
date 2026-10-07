@@ -1,0 +1,115 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+.topbar nav a {
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.topbar nav a[aria-current="page"] {
+  color: #ffdc79;
+  border-bottom-color: #ffdc79;
+}
+
+.hero {
+  min-height: calc(100vh - 200px);
+  padding-top: clamp(48px, 7vh, 90px);
+  padding-bottom: clamp(48px, 7vh, 90px);
+}
+
+.page-main {
+  width: min(1320px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: clamp(64px, 10vh, 110px) 0 100px;
+}
+
+.page-intro {
+  max-width: 850px;
+  margin-bottom: 48px;
+}
+
+.page-intro h1 {
+  margin: 0 0 20px;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -.06em;
+}
+
+.page-intro > p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: #b8c1ca;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.features article::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 4px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  background: #ffdc79;
+}
+
+.features h3 { margin-top: 0; }
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(35px, 6vw, 90px);
+  align-items: start;
+}
+
+.detail-layout > p {
+  max-width: 460px;
+  margin: 0;
+  color: #b8c1ca;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.detail-layout dl { margin: 0; }
+
+.detail-layout dl > div {
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ffffff24;
+}
+
+.detail-layout dt { color: #9facb8; }
+.detail-layout dd { margin: 0; line-height: 1.55; }
+
+.release-card {
+  max-width: 820px;
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid #e4c47267;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #2b2b27, #1c242c);
+}
+
+.release-card p {
+  margin: 0;
+  color: #c5cdd4;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .detail-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .page-main { width: calc(100% - 34px); padding: 64px 0 76px; }
+  .page-intro h1 { font-size: 43px; }
+  .page-intro > p:last-child, .release-card p { font-size: 17px; }
+  .detail-layout dl > div { grid-template-columns: 95px 1fr; }
+}
